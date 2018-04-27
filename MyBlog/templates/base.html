@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{% static 'images/beauty-icon.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custome.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a  class="navbar-brand" href="#"><img src="{% static 'images/cutmypic.png' %}" width="100%"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample05">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Fun</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tool</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown05">
+              <a class="dropdown-item" href="{% url 'check' %}">Check file type</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+        </form>
+      </div>
+    </nav>
+    </header>
+    <div class="row">
+        <div class="col-sm-3" style="padding-top: 10px;">
+            <div id="card-profile">
+                <div id="bl">
+                    <img src="{% static 'images/cuong.jpg' %}" alt="John" style="width:60%">
+                </div>
+                <h3 style="margin-top:10px; ">Quốc Cường</h3>
+                <p class="title">Programing</p>
+                <p>Power Ranger</p>
+                <a href="#" class="link-pr"><i class="fa fa-github-square"></i></a>
+                <a href="#" class="link-pr"><i class="fa fa-twitter-square"></i></a>
+                <a href="#" class="link-pr"><i class="fa fa-linkedin-square"></i></a>
+                <a href="#" class="link-pr"><i class="fa fa-facebook-square"></i></a>
+                <p><button id="bt-pro">Contact</button></p>
+            </div>
+        </div>
+        <div class="col-sm-9" style="padding-top: 10px;">
+            <div class="container-fluid">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!--file script-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

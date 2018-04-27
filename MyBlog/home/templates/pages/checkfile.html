@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Check File{% endblock %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="myfiles">
+    <button type="submit">Upload</button>
+  </form>
+
+  {% if uploaded_file_url %}
+      <p>Type of file: <b style="color: red">{{ uploaded_file_url }}</b></p>
+  {% endif %}
+
+  <p><a href="{% url 'check' %}">Return to home</a></p>
+{% endblock %}

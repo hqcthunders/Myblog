@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+    {% for Post in Posts %}
+        <h4>{{ Post.date_post|date:"d-m-Y" }}<a href="/blog/{{ Post.id }}">{{ Post.title_post }}</a></h4>
+
+    {% endfor %}
+
+{% endblock %}
